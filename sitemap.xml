@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://longkai.tech/post/git/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://longkai.tech/about/</loc>
     <lastmod>2020-06-28T21:08:18+08:00</lastmod>
   </url>
@@ -19,32 +14,10 @@
   
   <url>
     <loc>http://longkai.tech/categories/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://longkai.tech/tags/hugo/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://longkai.tech/tags/pages/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://longkai.tech/categories/pages/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://longkai.tech/post/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://longkai.tech/tags/</loc>
-    <lastmod>2017-12-14T11:18:15+08:00</lastmod>
   </url>
   
 </urlset>
