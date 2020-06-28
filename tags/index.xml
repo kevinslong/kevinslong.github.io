@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>http://kevinslong.github.io/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on kevin blog</title>
+    <link>http://longkai.tech/tags/</link>
+    <description>Recent content in Tags on kevin blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 14 Dec 2017 11:18:15 +0800</lastBuildDate>
     
-	<atom:link href="http://kevinslong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://longkai.tech/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>http://longkai.tech/tags/hugo/</link>
+      <pubDate>Thu, 14 Dec 2017 11:18:15 +0800</pubDate>
+      
+      <guid>http://longkai.tech/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pages</title>
+      <link>http://longkai.tech/tags/pages/</link>
+      <pubDate>Thu, 14 Dec 2017 11:18:15 +0800</pubDate>
+      
+      <guid>http://longkai.tech/tags/pages/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
