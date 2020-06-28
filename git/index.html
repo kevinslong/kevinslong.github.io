@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.68.0-DEV" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.2.0/favicons/favicon.ico" />
+
+
+<title> - My New Hugo Site</title>
+
+
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Go项目配置git hook 这里开始输入正文
+一、前言 Go语言官方提供有：
+这里开始输入正文
+ gofmt 来进行Go代码格式化 go tool vet 检查Go源码中静态错误第三方提供有: golint 检查GO代码风格(注释，命名等) goimports 自动导入需要的import statement和自动移除未被使用import statement  下面的pre-commit hook将上述的四个工具集成在一起。在将git暂存区中的代码commit到仓库之前，会对被改动的Go文件(不包括vendor目录下的文件)做下面的工作:
+这里开始输入正文
+ 自动调整被改动文件的 import statement 自动格式化被改动文件 展示代码中的静态错误 展示不符合规范的代码风格问题上述1和2是自动进行的, 而3和4则要求开发者按照提示进行修正，只有静态错误和代码风格全部修正完成之后，才能够commit成功。  二、用法  下载第三方的golint, goimports工具   go get golang.org/x/tools/cmd/goimports go get golang.org/x/lint/golint 这里开始输入正文
+ 将下面的脚本拷贝到项目仓库的 .git/hooks/pre-commit文件中(没有该文件新建后一个) 赋予文件可行性权限，并且重新加载git配置   chmod &#43;x .git/hooks/pre-commit chmod &#43;x .git/hooks/commit-msg git init 三、脚本「pre-commit」 #!/bin/sh  STAGED_GO_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep &#34;.go$&#34;) if [[ &#34;$STAGED_GO_FILES&#34; = &#34;&#34; ]]; then exit 0 fi PASS=true for FILE in $STAGED_GO_FILES do # 跳过vendor目录下的文件 if [[ $FILE == &#34;vendor&#34;* ]];then continue fi # goimports 检查并调整导入语句 goimports -w $FILE if [[ $?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://kevinslong.github.io/git/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Go项目配置git hook 这里开始输入正文
+一、前言 Go语言官方提供有：
+这里开始输入正文
+ gofmt 来进行Go代码格式化 go tool vet 检查Go源码中静态错误第三方提供有: golint 检查GO代码风格(注释，命名等) goimports 自动导入需要的import statement和自动移除未被使用import statement  下面的pre-commit hook将上述的四个工具集成在一起。在将git暂存区中的代码commit到仓库之前，会对被改动的Go文件(不包括vendor目录下的文件)做下面的工作:
+这里开始输入正文
+ 自动调整被改动文件的 import statement 自动格式化被改动文件 展示代码中的静态错误 展示不符合规范的代码风格问题上述1和2是自动进行的, 而3和4则要求开发者按照提示进行修正，只有静态错误和代码风格全部修正完成之后，才能够commit成功。  二、用法  下载第三方的golint, goimports工具   go get golang.org/x/tools/cmd/goimports go get golang.org/x/lint/golint 这里开始输入正文
+ 将下面的脚本拷贝到项目仓库的 .git/hooks/pre-commit文件中(没有该文件新建后一个) 赋予文件可行性权限，并且重新加载git配置   chmod &#43;x .git/hooks/pre-commit chmod &#43;x .git/hooks/commit-msg git init 三、脚本「pre-commit」 #!/bin/sh  STAGED_GO_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep &#34;.go$&#34;) if [[ &#34;$STAGED_GO_FILES&#34; = &#34;&#34; ]]; then exit 0 fi PASS=true for FILE in $STAGED_GO_FILES do # 跳过vendor目录下的文件 if [[ $FILE == &#34;vendor&#34;* ]];then continue fi # goimports 检查并调整导入语句 goimports -w $FILE if [[ $?"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+<link rel="stylesheet" href="/assets/css/fuji.min.css" />
+
+
+
+
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+    
+    var fujiThemeData = localStorage.getItem('fuji_data-theme');
+    
+    if (!fujiThemeData) {
+        localStorage.setItem('fuji_data-theme', 'auto');
+    } else {
+        
+        if (fujiThemeData !== 'auto') {
+            document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+        }
+    }
+</script>
+<script data-cfasync="false">
+    
+    function browserDetection(ua) {
+        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    var ua = window.navigator.userAgent;
+    if (browserDetection(ua)) {
+        window.location.href('http:\/\/kevinslong.github.io\/ie\/');
+    }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="http://kevinslong.github.io/">My New Hugo Site</a>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="http://kevinslong.github.io/git/"></a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><ion-icon name="today"></ion-icon>&nbsp;0001-01-01</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;No tag</span>
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <h1 id="go项目配置git-hook">Go项目配置git hook</h1>
+<p>这里开始输入正文</p>
+<h1 id="一前言">一、前言</h1>
+<p>Go语言官方提供有：</p>
+<p>这里开始输入正文</p>
+<ul>
+<li>gofmt 来进行Go代码格式化</li>
+<li>go tool vet 检查Go源码中静态错误第三方提供有:</li>
+<li>golint 检查GO代码风格(注释，命名等)</li>
+<li>goimports 自动导入需要的import statement和自动移除未被使用import statement</li>
+</ul>
+<p>下面的pre-commit hook将上述的四个工具集成在一起。在将git暂存区中的代码commit到仓库之前，会对被改动的Go文件(不包括vendor目录下的文件)做下面的工作:</p>
+<p>这里开始输入正文</p>
+<ul>
+<li>自动调整被改动文件的 import statement</li>
+<li>自动格式化被改动文件</li>
+<li>展示代码中的静态错误</li>
+<li>展示不符合规范的代码风格问题上述1和2是自动进行的, 而3和4则要求开发者按照提示进行修正，只有静态错误和代码风格全部修正完成之后，才能够commit成功。</li>
+</ul>
+<h1 id="二用法">二、用法</h1>
+<ol>
+<li>下载第三方的golint, goimports工具</li>
+</ol>
+<pre><code>   go get golang.org/x/tools/cmd/goimports
+   go get golang.org/x/lint/golint
+</code></pre><p>这里开始输入正文</p>
+<ol>
+<li>将下面的脚本拷贝到项目仓库的 <code>.git/hooks/pre-commit</code>文件中(没有该文件新建后一个)</li>
+<li>赋予文件可行性权限，并且重新加载git配置</li>
+</ol>
+<pre><code>   chmod +x .git/hooks/pre-commit
+   chmod +x .git/hooks/commit-msg
+   git init
+</code></pre><h1 id="三脚本pre-commit">三、脚本「pre-commit」</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+STAGED_GO_FILES<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git diff --cached --name-only --diff-filter<span style="color:#f92672">=</span>ACM | grep <span style="color:#e6db74">&#34;.go</span>$<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$STAGED_GO_FILES<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+    exit <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">fi</span>
+
+PASS<span style="color:#f92672">=</span>true
+
+<span style="color:#66d9ef">for</span> FILE in $STAGED_GO_FILES
+<span style="color:#66d9ef">do</span>
+    <span style="color:#75715e"># 跳过vendor目录下的文件</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $FILE <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;vendor&#34;</span>* <span style="color:#f92672">]]</span>;<span style="color:#66d9ef">then</span>
+        <span style="color:#66d9ef">continue</span>
+    <span style="color:#66d9ef">fi</span>
+
+    <span style="color:#75715e"># goimports 检查并调整导入语句</span>
+    goimports -w $FILE
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+        PASS<span style="color:#f92672">=</span>false
+    <span style="color:#66d9ef">fi</span>
+
+    <span style="color:#75715e"># golint 检查代码风格,给出提示</span>
+    golint <span style="color:#e6db74">&#34;-set_exit_status&#34;</span> $FILE
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $? <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+        PASS<span style="color:#f92672">=</span>false
+    <span style="color:#66d9ef">fi</span>
+
+    <span style="color:#75715e"># go tool vet 检查代码中的静态错误</span>
+    go tool vet $FILE
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+        PASS<span style="color:#f92672">=</span>false
+    <span style="color:#66d9ef">fi</span>
+
+  <span style="color:#75715e"># 如果当前文件没有被格式化，就格式化它</span>
+    UNFORMATTED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>gofmt -l $FILE<span style="color:#66d9ef">)</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$UNFORMATTED<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]]</span>;<span style="color:#66d9ef">then</span>
+        gofmt -w $PWD/$UNFORMATTED
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+            PASS<span style="color:#f92672">=</span>false
+        <span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">fi</span>
+
+    <span style="color:#75715e"># 上述 goimports, gofmt可能会对文件作出改动，</span>
+    <span style="color:#75715e"># 所以此处将更改提交至暂存区</span>
+    git add $FILE
+
+<span style="color:#66d9ef">done</span>
+
+<span style="color:#66d9ef">if</span> ! $PASS; <span style="color:#66d9ef">then</span>
+    printf <span style="color:#e6db74">&#34;\033[31m COMMIT FAILED \033[0m\n&#34;</span>
+    exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">else</span>
+    printf <span style="color:#e6db74">&#34;\033[32m COMMIT SUCCEEDED \033[0m\n&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+exit <span style="color:#ae81ff">0</span>
+</code></pre></div><h1 id="四脚本commit-msg">四、脚本「commit-msg」</h1>
+<p>规范化git commit message提交，我们这里做几点限制：</p>
+<p>至少15个字符（15个字符都没有，提交信息肯定不详细)；</p>
+<p>必须以feat|fix|chore|docs关键词开头，可选(scope) , 之后必须紧跟冒号和空格: ,之后就是具体的描述。</p>
+<p>直接上脚本：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># 忽略merge request</span>
+MERGE_MSG<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $1 | egrep <span style="color:#e6db74">&#39;^Merge branch*&#39;</span><span style="color:#e6db74">`</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$MERGE_MSG<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    exit <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">fi</span>
+
+COMMIT_MSG<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $1 | egrep <span style="color:#e6db74">&#34;^(feat|fix|docs|chore)(\(\w+\))?:\s(\S|\w)+&#34;</span><span style="color:#e6db74">`</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$COMMIT_MSG<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;Commit Message Irregular，Please check!\n&#34;</span>
+    exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">${#</span>COMMIT_MSG<span style="color:#e6db74">}</span> -lt <span style="color:#ae81ff">15</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;Commit Message Too Short，Please show me more detail!\n&#34;</span>
+    exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div>
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+        </div>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-toggle-mode">
+        <ion-icon name="contrast"></ion-icon>
+    </div>
+    <div class="btn-scroll-top">
+        <ion-icon name="chevron-up"></ion-icon>
+    </div>
+</div>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            <span>&copy; 2020 <a href="http://kevinslong.github.io/"></a> |
+                Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> & <a href="https://gohugo.io/"
+                   target="_blank">Hugo</a> </span>
+        </div>
+    </div>
+</footer>
+    
+    <script async type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
+<script async nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+</body>
+
+</html>
