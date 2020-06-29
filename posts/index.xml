@@ -2,23 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on kevin blog</title>
-    <link>http://longkai.tech/posts/</link>
+    <link>http://www.longkai.tech/posts/</link>
     <description>Recent content in Posts on kevin blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Jun 2020 21:23:32 +0800</lastBuildDate>
     
-	<atom:link href="http://longkai.tech/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.longkai.tech/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Git</title>
-      <link>http://longkai.tech/posts/git/</link>
+      <title>Go项目配置git hook</title>
+      <link>http://www.longkai.tech/posts/git/</link>
       <pubDate>Mon, 29 Jun 2020 21:23:32 +0800</pubDate>
       
-      <guid>http://longkai.tech/posts/git/</guid>
-      <description>Go项目配置git hook 这里开始输入正文
-一、前言 Go语言官方提供有：
+      <guid>http://www.longkai.tech/posts/git/</guid>
+      <description>一、前言 Go语言官方提供有：
 这里开始输入正文
  gofmt 来进行Go代码格式化 go tool vet 检查Go源码中静态错误第三方提供有: golint 检查GO代码风格(注释，命名等) goimports 自动导入需要的import statement和自动移除未被使用import statement  下面的pre-commit hook将上述的四个工具集成在一起。在将git暂存区中的代码commit到仓库之前，会对被改动的Go文件(不包括vendor目录下的文件)做下面的工作:
 这里开始输入正文
