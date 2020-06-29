@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://longkai.tech/posts/git/</loc>
+    <lastmod>2020-06-29T21:23:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://longkai.tech/posts/</loc>
+    <lastmod>2020-06-29T21:23:32+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://longkai.tech/about/</loc>
     <lastmod>2020-06-28T21:08:18+08:00</lastmod>
   </url>
